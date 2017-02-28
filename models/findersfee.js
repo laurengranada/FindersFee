@@ -2,16 +2,34 @@
 module.exports = function(sequelize, DataTypes) {
   var Findersfee = sequelize.define("Findersfee", {
     //Sequelize should have an id by default
-    username: DataTypes.STRING,
-    seeker: DataTypes.BOOLEAN,
-    email: DataTypes.STRING,
-    item_name: DataTypes.STRING,
-    category: DataTypes.STRING,
-    description: DataTypes.STRING,
-    fee: DataTypes.DECIMAL,
-    found: DataTypes.BOOLEAN,
-    timestamps: true
-  })
+    username: {
+      type: DataTypes.STRING,
+    },
+    seeker: {
+      type: DataTypes.BOOLEAN,
+    },
+    email: {
+      type: DataTypes.STRING,
+    },
+    item_name: {
+      type: DataTypes.STRING,
+    },
+    category: {
+      type: DataTypes.STRING,
+    },
+    description: {
+      type: DataTypes.STRING,
+    },
+    fee: {
+      type: DataTypes.DECIMAL,
+    },
+    found: {
+      type:DataTypes.BOOLEAN,
+      timestamps:true
+    }
+
+
+  });
 
   return Findersfee;
 };
