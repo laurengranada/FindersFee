@@ -9,9 +9,13 @@ module.exports = function(sequelize, DataTypes) {
     category: DataTypes.STRING,
     description: DataTypes.STRING,
     fee: DataTypes.DECIMAL,
-    found: DataTypes.BOOLEAN,
-    timestamps: true
-  })
+    found: DataTypes.BOOLEAN
+  }, {
+      timestamps: true,
+      createdAt: false,
+      updatedAt: false,
+      freezeTableName: true
+  });
 
   return Findersfee;
 };
