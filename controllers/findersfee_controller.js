@@ -15,7 +15,7 @@ router.get("/post", function(req, res) {
       category: dbFindersfee,
       description: dbFindersfee,
       fee: dbFindersfee,
-      timestamp: dbFindersfee //not sure if this works
+      timestamps: dbFindersfee //not sure if this works
     };
     res.render("post", hbsObject);
    
