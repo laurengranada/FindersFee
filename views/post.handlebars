@@ -4,12 +4,14 @@
 <ul>
 
   {{#each item_name}}
-    {{#if this.devoured}}
-      <li>
-        {{this.item_name}}
+    {{#unless this.found}}
+      <li style="list-style-type: none">
+    {{this.item_name}}
+    {{this.category}}
+    {{this.description}}
+    {{this.fee}}
+    {{this.found}}
       </li>
-    {{/if}}
+    {{/unless}}
   {{/each}}
 </ul>
-
-
