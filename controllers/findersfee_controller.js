@@ -15,7 +15,7 @@ router.get("/post", function(req, res) {
       category: dbFindersfee,
       description: dbFindersfee,
       fee: dbFindersfee,
-      timestamp: dbFindersfee //not sure if this works
+      timestamps: dbFindersfee //not sure if this works
     };
     res.render("post", hbsObject);
    
@@ -69,7 +69,7 @@ router.put("/:id", function(req, res) {
         id: req.params.id
       }
     }).then(function(dbFindersfee) {
-      res.redirect("/");
+      res.redirect("/post");
   });
 });
 
@@ -82,7 +82,7 @@ router.put("/:id", function(req, res) {
         id: req.params.id
       }
     }).then(function(dbFindersfee) {
-      res.redirect("/");
+      res.redirect("/userview");
   });
 });
 

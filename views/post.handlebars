@@ -1,0 +1,13 @@
+<h1>Findersfee</h1>
+
+<ul>
+  {{#each item_name}}
+    {{#unless this.found}}
+    <li style="list-style-type: none">{{this.item_name}}</li>
+    <li style="list-style-type: none">{{this.category}}</li>
+    <li style="list-style-type: none">{{this.description}}</li>
+    <li style="list-style-type: none">{{this.fee}}</li>
+    <li style="list-style-type: none">{{this.found}}</li>
+    {{/unless}}
+  {{/each}}
+</ul>

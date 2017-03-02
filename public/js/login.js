@@ -39,34 +39,30 @@ window.addEventListener('load', function() {
     };
 
     var showUserProfile = function(profile) {
-        // $('#login').style.display = "none";
-        // $('#logged').style.display = "inline-block";
-        // $('#avatar').src = profile.picture;
-        // $('#name').textContent = profile.name;
-        // $('#email').textContent = profile.email;
-        // $('#nickname').textContent = profile.nickname;
-        // $('#created_at').textContent = profile.created_at;
-        // $('#updated_at').textContent = profile.updated_at;
-        // $('#country').textContent = profile.country;
+        $('#login').style.display = "none";
+        $('#logged').style.display = "inline-block";
+        $('#avatar').src = profile.picture;
+        $('#name').textContent = profile.name;
+        $('#email').textContent = profile.email;
+        $('#nickname').textContent = profile.nickname;
+        $('#created_at').textContent = profile.created_at;
+        $('#updated_at').textContent = profile.updated_at;
+        $('#country').textContent = profile.country;
 
         var user_info = ({
                 email: profile.email
             });
-            //takes user email to post to page to 
-            //attach to our own db metadatha
-    //     $.post("/user", user_info).then((data) => {
-    //         console.log(data);
-    //         if (data.userType == "seeker") {
-    //             if (data.completedSurvey == false) {
-    //                 window.location.href = "/survey";
-    //             } else if (data.completedSurvey == true) {
-    //                 //if they are a seeker and have completed survey, direct them to documents portal
-    //                 window.location.href = "/document";
-    //             }
-    //         } else { //if user is a finder, directs them to list of surveys
-    //             window.location.href = "/surveyList";
-    //         }
-    //     });
-    };
+         $.post("/user", user_info).then((data) => {
+            console.log(data);
+            if (data.userType == "seeker") {
+    //            
+            }
+        });
+     };
 
-    // parseHash();
+
+    parseHash();
+
+});
+
+          
