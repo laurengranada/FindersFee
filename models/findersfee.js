@@ -15,6 +15,7 @@ module.exports = function(sequelize, DataTypes) {
       createdAt: false,
       updatedAt: false,
       freezeTableName: true
+
   });
 
   return Findersfee;
