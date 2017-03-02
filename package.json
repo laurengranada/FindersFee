@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "dependencies": {},
+  "dependencies": {
+    "express-session": "^1.15.1",
+    "passport": "^0.3.2"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
