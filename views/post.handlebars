@@ -1,0 +1,15 @@
+<h1>Findersfee</h1>
+
+{{!-- Devoured burgers will be displayed here --}}
+<ul>
+
+  {{#each item_name}}
+    {{#if this.devoured}}
+      <li>
+        {{this.item_name}}
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>
+
+
