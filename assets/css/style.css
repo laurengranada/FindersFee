@@ -1,0 +1,121 @@
+body {
+	background-color: #99ffcc;
+}
+
+.jumbotron {
+border-style: solid;
+background-position: 0% 25%;
+color: black;
+border-color: #8a25b1;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 0px;
+	font-size: 100px;
+}
+
+
+h3 {
+  font-size: 25px;
+  margin: 0px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.button {
+	text-align: center;
+}
+
+.btn-6k {
+  background: #ffd633;
+  background-image: -webkit-linear-gradient(top, #ffd633, #ffd11a);
+  background-image: -moz-linear-gradient(top, #ffd633, #ffd11a);
+  background-image: -ms-linear-gradient(top, #ffd633, #ffd11a);
+  background-image: -o-linear-gradient(top, #ffd633, #ffd11a);
+  background-image: linear-gradient(to bottom, #ffd633, #ffd11a);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: white;
+  font-size: 80px;
+  padding: 10px 20px 10px 20px;
+  margin-right: 100px;
+  outline: none;
+}
+
+.btn-6l {
+  background: #ffd633;
+  background-image: -webkit-linear-gradient(top, #ffd633, #ffd11a);
+  background-image: -moz-linear-gradient(top, #ffd633, #ffd11a);
+  background-image: -ms-linear-gradient(top, #ffd633, #ffd11a);
+  background-image: -o-linear-gradient(top, #ffd633, #ffd11a);
+  background-image: linear-gradient(to bottom, #ffd633, #ffd11a);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: white;
+  font-size: 80px;
+  padding: 10px 20px 10px 20px;
+  outline: none;
+}
+
+.btn:hover {
+  background: #ffe066;
+  background-image: -webkit-linear-gradient(top, #ffe066, #ffdb4d);
+  background-image: -moz-linear-gradient(top, #ffe066, #ffdb4d);
+  background-image: -ms-linear-gradient(top, #ffe066, #ffdb4d);
+  background-image: -o-linear-gradient(top, #ffe066, #ffdb4d);
+  background-image: linear-gradient(to bottom, #ffe066, #ffdb4d);
+  text-decoration: none;
+}
+
+.container2 {
+  border-style: solid;
+  border-style: center;
+  border-color: #8a25b1;
+  text-align: center;
+  max-width: 1000px;
+  margin-top: auto;
+
+  margin: 10px auto;
+  position: relative;
+
+}
+
+ul {
+  margin-top: 5px;
+}
+
+hr {
+	display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-width: 2px;
+  }
+
+.footer {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 985px;
+    margin: 0 auto 8px;
+    color: #000000;
+  	font-size: 10px;
+
+
+     position: absolute;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     text-align: center;
+}
+
+
+
+
+
+
+
