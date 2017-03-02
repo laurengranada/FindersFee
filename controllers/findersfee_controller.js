@@ -69,7 +69,7 @@ router.put("/:id", function(req, res) {
         id: req.params.id
       }
     }).then(function(dbFindersfee) {
-      res.redirect("/");
+      res.redirect("/post");
   });
 });
 
@@ -82,7 +82,7 @@ router.put("/:id", function(req, res) {
         id: req.params.id
       }
     }).then(function(dbFindersfee) {
-      res.redirect("/");
+      res.redirect("/userview");
   });
 });
 
