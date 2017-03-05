@@ -11,4 +11,4 @@ $( document ).ready(function() {   //hides logout button if user is not logged i
     $( "#btn-logout" ).click(function() {
         logout();
     });
-});
+}); 
