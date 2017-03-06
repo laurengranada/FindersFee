@@ -14,19 +14,28 @@ var path = require("path"); ///trying this 11:23 pm friday 3/3/17
 
 //module.exports = function(app){//might need this????
 
-// Basic route that sends the user first to the AJAX Page
+// Basic route that sends the user first to the index page
 router.get("/", function(req, res) {
   res.sendFile(path.join(
-__dirname, "/../views/index.handlebars"));
+__dirname, "/../views/index"));
 });
 
 router.get("/add", function(req, res) {
-  res.sendFile(path.join(__dirname, "/../views/seeker.handlebars"));   ///probably need a function to split 
+  res.sendFile(path.join(__dirname, "/../views/seekerlogin"));   ///probably need a function to split 
   //into seeker and finder pages depending on which button they choose
 });
+//testing this 3/6/17 12:12 am===============================================
 
+// directed to main index page ==================================
+  //seeker login
+router.get("/index", function(req, res) {
+  // 
+    res.render("index");
+   
+  });
+  ///========================================================================
 // Create all our routes and set up logic within those routes where required.
-// This is the route to show all the posts (post.html)
+// This is the route to show all the posts (post.handlebars)
 router.get("/post", function(req, res) {
   db.Findersfee.findAll({}).then(function(dbFindersfee) {
     // We have access to the Findersfee as an argument inside of the callback function
@@ -57,7 +66,7 @@ router.post("/userview", function(req, res) {
     found: false
   }).then(function(dbFindersfee) {
       // New post is added to the database
-      res.redirect("/userview");
+      res.redirect("/userview"); //?? This should be /post
   });
 });
 
@@ -117,6 +126,7 @@ router.put("/:id", function(req, res) {
       res.redirect("/userview");
     });
   });
+  //creating all of the routes below friday
 //=============================================Log In Pages=========================================
 
   // directed to seeker login page ==================================

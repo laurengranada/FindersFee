@@ -3,7 +3,11 @@ var AUTH0_DOMAIN = 'dflint1.auth0.com';
 var AUTH0_CALLBACK_URL = location.href;
 
 window.addEventListener('load', function() {
-    var lock = new Auth0Lock(AUTH0_CLIENT_ID, AUTH0_DOMAIN);
+    var lock = new Auth0Lock(AUTH0_CLIENT_ID, AUTH0_DOMAIN, {
+        theme: {
+            logo: "../dollar.png"
+        }
+    });
 
     // var lock = new Auth0Lock('vhEttCE1CDX47iLcwqrD9QzktODnIRSm', 'dflint1.auth0.com');
     document.getElementById('btn-login').addEventListener('click', function() {
@@ -39,7 +43,7 @@ window.addEventListener('load', function() {
     };
 
     var showUserProfile = function(profile) {
-        $('#login').style.display = "none";
+        $('#login').style.display = "none";  //tried "" instead of none 7:35pm 3/5/17 and doesn't work either
         $('#logged').style.display = "inline-block";
         $('#avatar').src = profile.picture;
         $('#name').textContent = profile.name;
@@ -54,14 +58,22 @@ window.addEventListener('load', function() {
             });
          $.post("/user", user_info).then((data) => {
             console.log(data);
-            if (data.userType == "seeker") {
-    //            
-            }
+            if (data.userType == "seeker") {        ///changed this 03/05/17 6:31pm
+                window.location.href = "/seekerform";
+                } else if (data.userType == "finder") {
+                    //if they are a seeker and have completed form, direct them to documents portal
+                    window.location.href = "/post";
+                }
+            // } else { //if user is a lawyer, directs them to list of surveys
+            //     window.location.href = "/";}
+            
         });
-     };
+    };
+      
+    
 
 
-    parseHash();
+    parseHash();  //this has to be here in order for Auth0 to pull up the auth0 login popup
 
 });
 

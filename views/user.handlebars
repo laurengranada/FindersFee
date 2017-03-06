@@ -1,0 +1,9 @@
+<!--we need this page for auth0 for user nickname and profile picture
+<!In Views/user.handlebars we simply display the user's nickname and profile picture-->
+
+extends layout
+block content
+	img(src="#{user.picture}")
+  h2 Welcome #{user.nickname}!
+  br
+  a(href='/logout') Logout
