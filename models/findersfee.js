@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
     description: DataTypes.STRING,
     fee: DataTypes.DECIMAL,
     found: DataTypes.BOOLEAN,
-    seeker_email: DataTypes.STRING
+    finders_email: DataTypes.STRING
   }, {
       timestamps: true,
       createdAt: false,
