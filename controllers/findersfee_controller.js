@@ -73,6 +73,7 @@ router.post("/userview", function(req, res) {
 //find a post by username, used when user logs in
 //Needs to set a variable to store username when user logs in
 router.get("/userview", function(req, res) {
+  var username = 'Gengar'; 
   db.Findersfee.findOne({where: {username: username}}).then(function(dbFindersfee) {
     // We have access to the Findersfee as an argument inside of the callback function
    var object = { //not sure if I can put it all into one object
