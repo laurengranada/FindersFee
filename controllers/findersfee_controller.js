@@ -46,8 +46,8 @@ router.get("/post", function(req, res) {
       fee: dbFindersfee,
       timestamps: dbFindersfee //not sure if this works
     };
-    // res.render("post", hbsObject);
-     res.render('post', { findersfee: hbsObject});   ///just entered this 12pm 3/3/17 and it works
+    res.render("post", hbsObject);
+     // res.render('post', { findersfee: hbsObject});   ///just entered this 12pm 3/3/17 and it works
    
   });
 });
