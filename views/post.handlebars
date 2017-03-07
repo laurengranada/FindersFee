@@ -1,19 +1,28 @@
 <!-- //This is The page called "post" where the finder selects from this list when they have info on its location -->
 
 
-<h1>ITEMS TO FIND</h1>
+<h2>ITEMS TO FIND</h2>
 
+{{!--<form action="/{{this.id}}?_method=PUT" method="POST">--}}
+{{!--<div class="form-group">--}}
 <ul>
   {{#each item_name}}
     {{#unless this.found}}
-    <li style="list-style-type: none">{{this.item_name}}</li>
-    <li style="list-style-type: none">{{this.category}}</li>
-    <li style="list-style-type: none">{{this.description}}</li>
-    <li style="list-style-type: none">{{this.fee}}</li>
-    <li style="list-style-type: none">{{this.found}}</li>
+    <li style="list-style-type: none; display: none">{{this.id}}</li>
+    <li style="list-style-type: none">Item Name: {{this.item_name}}</li>
+    <li style="list-style-type: none">Category:{{this.category}}</li>
+    <li style="list-style-type: none">Description:{{this.description}}</li>
+    <li style="list-style-type: none">Fee:{{this.fee}}</li>
+    <form action="/{{this.id}}?_method=PUT" method="POST">
+    <div class="form-group">
+    <li style="list-style-type: none">Found: <input type="checkbox" name="found" value="true"> </li>
+    <input type="text" id="finders_email" name="finders_email">
+    <button type="submit">Submit</button>
     {{/unless}}
   {{/each}}
 </ul>
+</div>
+</form>
 
 
 <!-- 
