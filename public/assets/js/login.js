@@ -56,7 +56,7 @@ window.addEventListener('load', function() {
         var user_info = ({
                 email: profile.email
             });
-         $.post("/user", user_info).then((data) => {
+         $.post("/userview", "Gengar").then((data) => {
             console.log(data);
             if (data.userType == "seeker") {        ///changed this 03/05/17 6:31pm
                 window.location.href = "/seekerform";
