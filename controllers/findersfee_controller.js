@@ -183,6 +183,8 @@ router.get("/dealdone", function(req, res) {
    
   });
     
+///I can use this later on login.js at the end!! 9:15pm 3/6/17=============<script src="/public/assets/js/login.js"></script>
+
 
     //probably get rid of this and replace it with the form data info because it doesn't work-duh!
 

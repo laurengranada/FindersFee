@@ -1,4 +1,54 @@
 <div class="container">
 
-		<h2>User's view of Info</h2>
+		<h2>What are you looking for?</h2>
 		<hr>
+
+            <label for="basic-url">Item: </label>
+            <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1"></span>
+                  <input type="text" class="form-control" placeholder="type here" aria-describedby="basic-addon1" required="true">
+            </div>
+
+		<!-- <h4>Link to Photo Image (Required)</h4>
+		<input type="text" name="" id="photo" class="form-control" required >
+ -->
+            <br>
+            <div class="form-group">
+                <label for="Category">Category: </label>
+                <select class="form-control" id="exampleSelect1">
+                  <option>Appliances</option>
+                  <option>Arts&Crafts</option>
+                  <option>Auto</option>
+                  <option>Furniture</option>
+                  <option>Tech</option>
+                </select>
+            </div>
+
+            
+            <label for="basic-url">Item Description: </label>
+            <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1"></span>
+                  <input type="text" class="form-control" placeholder="type here" aria-describedby="basic-addon1" required="true">
+            </div>
+          
+
+            <br>
+            <label>Fee:</label>
+            <div class="input-group">
+                  <span class="input-group-addon">$</span>
+                  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                   <span class="input-group-addon">.00</span>
+            </div>
+
+            <br>
+            <label>Email to Contact: </label>
+            <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Seeker's Email" aria-describedby="basic-addon2">
+                  <span class="input-group-addon" id="basic-addon2">@example.com</span>
+            </div>
+
+		<br>
+		<!-- Submit Button -->
+		<button type="submit" class="btn btn-primary btn-lg btn-block" id="submit" onclick="location.href='/post'"><i class="fa fa-check-circle" aria-hidden="true"></i>Submit</button>
+</div>
+
