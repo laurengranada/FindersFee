@@ -9,7 +9,8 @@ module.exports = function(sequelize, DataTypes) {
     category: DataTypes.STRING,
     description: DataTypes.STRING,
     fee: DataTypes.DECIMAL,
-    found: DataTypes.BOOLEAN
+    found: DataTypes.BOOLEAN,
+    finders_email: DataTypes.STRING
   }, {
       timestamps: true,
       createdAt: false,

@@ -40,14 +40,15 @@ router.get("/post", function(req, res) {
   db.Findersfee.findAll({}).then(function(dbFindersfee) {
     // We have access to the Findersfee as an argument inside of the callback function
    var hbsObject = { //not sure if I can put it all into one object
+      id: dbFindersfee,
       item_name: dbFindersfee,
       category: dbFindersfee,
       description: dbFindersfee,
       fee: dbFindersfee,
       timestamps: dbFindersfee //not sure if this works
     };
-    // res.render("post", hbsObject);
-     res.render('post', { findersfee: hbsObject});   ///just entered this 12pm 3/3/17 and it works
+    res.render("post", hbsObject);
+     // res.render('post', { findersfee: hbsObject});   ///just entered this 12pm 3/3/17 and it works
    
   });
 });
@@ -66,13 +67,14 @@ router.post("/userview", function(req, res) {
     found: false
   }).then(function(dbFindersfee) {
       // New post is added to the database
-      res.redirect("/userview"); //?? This should be /post
+      res.redirect("/userview"); 
   });
 });
 
 //find a post by username, used when user logs in
 //Needs to set a variable to store username when user logs in
 router.get("/userview", function(req, res) {
+  var username = 'Gengar'; 
   db.Findersfee.findOne({where: {username: username}}).then(function(dbFindersfee) {
     // We have access to the Findersfee as an argument inside of the callback function
    var object = { //not sure if I can put it all into one object
@@ -89,22 +91,24 @@ router.get("/userview", function(req, res) {
 });
 
 //Allow finders to respond to post
-router.put("/:id", function(req, res) {
+router.put("/post/:id", function(req, res) {
   // Update takes in an object describing the properties we want to update, and
   // we use where to describe which objects we want to update
     db.Findersfee.update({
-      found: true
+      found: true,
+      finders_email: req.body.finders_email
     }, {
       where: {
         id: req.params.id
       }
     }).then(function(dbFindersfee) {
+      console.log(req.body);
       res.redirect("/post");
   });
 });
 
 //Allow seeker to set post back to not found
-router.put("/:id", function(req, res) {
+router.put("userview/:id", function(req, res) {
     db.Findersfee.update({
       found: false
     }, {
@@ -117,7 +121,7 @@ router.put("/:id", function(req, res) {
 });
 
 //Delete the post once it's find
-  router.delete("/:id", function(req, res) {
+  router.delete("userview/:id", function(req, res) {
     db.Finders.destroy({
       where: {
         id: req.params.id
