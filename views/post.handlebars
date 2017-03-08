@@ -13,7 +13,7 @@
     <li style="list-style-type: none">Category:{{this.category}}</li>
     <li style="list-style-type: none">Description:{{this.description}}</li>
     <li style="list-style-type: none">Fee:{{this.fee}}</li>
-    <form action="/{{this.id}}?_method=PUT" method="POST">
+    <form action="post/{{this.id}}?_method=PUT" method="POST">
     <div class="form-group">
     <li style="list-style-type: none">Found: <input type="checkbox" name="found" value="true"> </li>
     <input type="text" id="finders_email" name="finders_email">
