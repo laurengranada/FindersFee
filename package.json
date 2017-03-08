@@ -1,7 +1,7 @@
 {
   "name": "findersfee",
   "version": "1.0.0",
-  "description": "",
+  "description": "A fancy app that utilizes sequelize and handlebars",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.17.1",
@@ -12,9 +12,11 @@
     "method-override": "^2.3.7",
     "mysql": "^2.13.0",
     "node.js": "0.0.0",
+    "nodemon": "^1.11.0",
     "passport": "^0.3.2",
     "passport-auth0": "^0.6.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "sequelize": "^3.30.2"
   },
   "devDependencies": {},
   "scripts": {
