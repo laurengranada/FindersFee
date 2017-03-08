@@ -102,7 +102,6 @@ router.put("/post/:id", function(req, res) {
         id: req.params.id
       }
     }).then(function(dbFindersfee) {
-      console.log(req.body);
       res.redirect("/post");
   });
 });
