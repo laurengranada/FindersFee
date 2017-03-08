@@ -149,11 +149,16 @@ router.get("/finderlogin", function(req, res) {
 //============================================ Form Pages===================================
     // directed to Seeker's 2nd page after logged in and enters their info to find===========
   //Seeker enters info into a form here
-router.get("/seekerform", function(req, res) {
+  router.get("/userview", function(req, res) {
   // 
-    res.render("seekerform");
+    res.render("userview");
    
   });
+// router.get("/seekerform", function(req, res) {
+//   // 
+//     res.render("seekerform");
+   
+//   });
    
  
 
