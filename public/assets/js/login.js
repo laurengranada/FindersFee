@@ -1,14 +1,21 @@
 var AUTH0_CLIENT_ID = 'vhEttCE1CDX47iLcwqrD9QzktODnIRSm';
 var AUTH0_DOMAIN = 'dflint1.auth0.com';
-// var AUTH0_CALLBACK_URL = location.href;
 var AUTH0_CALLBACK_URL = AUTH0_CALLBACK_URL || 'http://localhost:8080/userview/callback';
 
 window.addEventListener('load', function() {
     var lock = new Auth0Lock(AUTH0_CLIENT_ID, AUTH0_DOMAIN, {
-        theme: {
-            logo: "../dollar.png"
-        }
-    });
+        auth: {
+      redirectUrl: 'http://localhost:8080/userview',
+      responseType: 'code',
+      params: {
+        scope: 'openid email' // Learn about scopes: https://auth0.com/docs/scopes
+      }
+    }
+  });
+        // theme: {
+        //     logo: "../dollar.png"
+    //     }
+    // });
 
     // var lock = new Auth0Lock('vhEttCE1CDX47iLcwqrD9QzktODnIRSm', 'dflint1.auth0.com');
     //Auth0 buttons:
@@ -20,7 +27,8 @@ window.addEventListener('load', function() {
         logout();
     });
 
-    lock.on("authenticated", function(authResult) {
+   
+ lock.on("authenticated", function(authResult) {
         lock.getProfile(authResult.idToken, function(err, profile) {
             if (err) {
                 // Remove expired token (if any)
@@ -31,11 +39,11 @@ window.addEventListener('load', function() {
             } else {
                 localStorage.setItem('id_token', authResult.idToken);
                 localStorage.setItem('profile', JSON.stringify(profile));
-                showUserProfile(profile);
+                showUserProfile(profile); 
+                 // <a href="userview">
             }
         });
     });
-
     var parseHash = function() {
         var id_token = localStorage.getItem('id_token');
         if (null != id_token) {
@@ -65,7 +73,7 @@ window.addEventListener('load', function() {
             // if (data.userType == "seeker") {        ///changed this 03/05/17 6:31pm
             //     window.location.href = "/userview";
             //     } else if (data.userType == "finder") {
-            //         //if they are a seeker and have completed form, direct them to documents portal
+            //         //if they are a seeker, direct them to documents portal
             //         window.location.href = "/userview";  //making this the same for simplicity for now 3/7/17 3:20pm
             //     }
             // } else { //if user is neither directs them to index page
