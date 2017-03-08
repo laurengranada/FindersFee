@@ -4,8 +4,17 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "body-parser": "^1.17.1",
+    "connect-ensure-login": "^0.1.1",
+    "express": "^4.15.2",
     "express-session": "^1.15.1",
-    "passport": "^0.3.2"
+    "handlebars": "^4.0.6",
+    "method-override": "^2.3.7",
+    "mysql": "^2.13.0",
+    "node.js": "0.0.0",
+    "passport": "^0.3.2",
+    "passport-auth0": "^0.6.0",
+    "path": "^0.12.7"
   },
   "devDependencies": {},
   "scripts": {
@@ -16,7 +25,7 @@
     "type": "git",
     "url": "git+https://github.com/laurengranada/FindersFee.git"
   },
-  "author": "",
+  "author": "Dana Flint, Lauren Granada, Marcus Andersh, Sandi Gau",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/laurengranada/FindersFee/issues"
