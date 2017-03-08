@@ -1,7 +1,7 @@
 var AUTH0_CLIENT_ID = 'vhEttCE1CDX47iLcwqrD9QzktODnIRSm';
 var AUTH0_DOMAIN = 'dflint1.auth0.com';
 // var AUTH0_CALLBACK_URL = location.href;
-var AUTH0_CALLBACK_URL = AUTH0_CALLBACK_URL || 'http://localhost:8080/seekerform'
+var AUTH0_CALLBACK_URL = AUTH0_CALLBACK_URL || 'http://localhost:8080/userview/callback';
 
 window.addEventListener('load', function() {
     var lock = new Auth0Lock(AUTH0_CLIENT_ID, AUTH0_DOMAIN, {
