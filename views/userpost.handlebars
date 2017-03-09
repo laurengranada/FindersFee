@@ -1,0 +1,18 @@
+
+
+<h2>Your posts</h2> 
+
+<ul>
+  {{#each item_name}}
+    <li style="list-style-type: none; display: none">{{this.id}}</li>
+    <li style="list-style-type: none">Item Name: {{this.item_name}}</li>
+    <li style="list-style-type: none">Category:{{this.category}}</li>
+    <li style="list-style-type: none">Description:{{this.description}}</li>
+    <li style="list-style-type: none">Fee:{{this.fee}}</li>
+    <li style="list-style-type: none">Found:{{this.found}}</li>
+    <li style="list-style-type: none">Email:{{this.finders_email}}</li>
+  {{/each}}
+</ul>
+</div>
+
+

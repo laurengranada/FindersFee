@@ -7,7 +7,7 @@ var db = require("../models");
 // / Dependencies
 // // =============================================================
 
-var path = require("path"); ///trying this 11:23 pm friday 3/3/17
+var path = require("path"); 
 
 // Routes 
 
@@ -39,9 +39,10 @@ router.get("/post", function(req, res) {
 
 //Add a new item into the database
 router.post("/userview", function(req, res) {
+  var username = "Gengar";
     // create takes an argument of an object describing the item we want to
     db.Findersfee.create({
-    username: req.body.username,
+    username: username,
     seeker: true,
     email: req.body.email,
     item_name: req.body.item_name,
@@ -51,7 +52,7 @@ router.post("/userview", function(req, res) {
     found: false
   }).then(function(dbFindersfee) {
       // New post is added to the database
-      res.redirect("/userview"); 
+      res.redirect("/userpost"); 
   });
 });
 
@@ -74,6 +75,25 @@ router.get("/userview", function(req, res) {
   });
 });
 
+router.get("/userpost", function(req, res) {
+  var username = 'Gengar'; //hardcode, needs to take this out once login works
+  db.Findersfee.findAll({where: {username: username}}).then(function(dbFindersfee) {
+    // We have access to the Findersfee as an argument inside of the callback function
+   var object = { 
+      item_name: dbFindersfee,
+      item_name: dbFindersfee,
+      category: dbFindersfee,
+      description: dbFindersfee,
+      fee: dbFindersfee,
+      found: dbFindersfee,
+      finders_email: dbFindersfee,
+      timestamp: dbFindersfee //needs to look up syntax
+    };
+    res.render("userpost", object); 
+   
+  });
+});
+
 //Allow finders to respond to post
 router.put("/post/:id", function(req, res) {
   // Update takes in an object describing the properties we want to update, and
@@ -89,7 +109,7 @@ for(var i=0; i < req.body.finders_email.length; i++) {
 
     db.Findersfee.update({
       found: true,
-      finders_email: findersemail  //.join(',')
+      finders_email: findersemail  
     }, {
       where: {
         id: req.params.id
