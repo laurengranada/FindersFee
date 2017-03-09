@@ -96,7 +96,7 @@ router.put("/post/:id", function(req, res) {
   // we use where to describe which objects we want to update
     db.Findersfee.update({
       found: true,
-      finders_email: req.body.finders_email
+      finders_email: req.body.finders_email.join(',')
     }, {
       where: {
         id: req.params.id
