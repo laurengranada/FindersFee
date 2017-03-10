@@ -4,13 +4,16 @@
 
 <ul>
   {{#each item_name}}
+  <form action="userpost/{{this.id}}?_method=DELETE" method="POST">
     <li style="list-style-type: none; display: none">{{this.id}}</li>
     <li style="list-style-type: none">Item Name: {{this.item_name}}</li>
     <li style="list-style-type: none">Category:{{this.category}}</li>
     <li style="list-style-type: none">Description:{{this.description}}</li>
     <li style="list-style-type: none">Fee:{{this.fee}}</li>
-    <li style="list-style-type: none">Found:{{this.found}}</li>
+    <li style="list-style-type: none">Found:<input type='checkbox' {{#if found}}checked{{/if}}> </li>
     <li style="list-style-type: none">Email:{{this.finders_email}}</li>
+    <button type="submit">Delete</button>
+    </form>
   {{/each}}
 </ul>
 </div>
