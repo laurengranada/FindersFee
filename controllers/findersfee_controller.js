@@ -122,7 +122,7 @@ for(var i=0; i < req.body.finders_email.length; i++) {
 });
 
 //Allow seeker to set post back to not found
-router.put("userview/:id", function(req, res) {
+router.put("userpost/:id", function(req, res) {
     db.Findersfee.update({
       found: false
     }, {
@@ -130,18 +130,18 @@ router.put("userview/:id", function(req, res) {
         id: req.params.id
       }
     }).then(function(dbFindersfee) {
-      res.redirect("/userview");
+      res.redirect("/userpost");
   });
 });
 
 //Delete the post once it's find
-  router.delete("userview/:id", function(req, res) {
-    db.Finders.destroy({
+  router.delete("/userpost/:id", function(req, res) {
+    db.Findersfee.destroy({
       where: {
         id: req.params.id
       }
     }).then(function(dbFindersfee) {
-      res.redirect("/userview");
+      res.redirect("/userpost");
     });
   });
 
