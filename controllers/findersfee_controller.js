@@ -110,7 +110,7 @@ for(var i=0; i < req.body.finders_email.length; i++) {
     db.Findersfee.update({
       found: true,
 
-      finders_email: req.body.finders_email.join(',')
+      finders_email: req.body.finders_email
     }, {
       where: {
         id: req.params.id
