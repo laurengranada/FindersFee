@@ -1,24 +1,24 @@
 var AUTH0_CLIENT_ID = 'vhEttCE1CDX47iLcwqrD9QzktODnIRSm';
 var AUTH0_DOMAIN = 'dflint1.auth0.com';
-var AUTH0_CALLBACK_URL = AUTH0_CALLBACK_URL || 'http://localhost:8080/userview/callback';
+var AUTH0_CALLBACK_URL = AUTH0_CALLBACK_URL || 'https://safe-spire-56090.herokuapp.com/userview/callback';
 
 window.addEventListener('load', function() {
     var lock = new Auth0Lock(AUTH0_CLIENT_ID, AUTH0_DOMAIN, {
         auth: {
-      redirectUrl: 'http://localhost:8080/userview',
+      redirectUrl: 'https://safe-spire-56090.herokuapp.com/userview', 
       responseType: 'code',
       params: {
         scope: 'openid email' // Learn about scopes: https://auth0.com/docs/scopes
       }
     }
+    //prior heroku redirect 'http://localhost:8080/userview',
   });
         // theme: {
         //     logo: "../dollar.png"
     //     }
     // });
 
-    // var lock = new Auth0Lock('vhEttCE1CDX47iLcwqrD9QzktODnIRSm', 'dflint1.auth0.com');
-    //Auth0 buttons:
+    
     document.getElementById('btn-login').addEventListener('click', function() {
         lock.show();
     });
@@ -53,7 +53,7 @@ window.addEventListener('load', function() {
     };
 
     var showUserProfile = function(profile) {
-        // $('#login').style.display = "none";  //tried "" instead of none 7:35pm 3/5/17 and doesn't work either
+        // $('#login').style.display = "none";  
         // $('#logged').style.display = "inline-block";
         $('#avatar').src = profile.picture;
         // $('#name').textContent = profile.name;
@@ -70,11 +70,11 @@ window.addEventListener('load', function() {
          // $.post("/userview", "Gengar").then((data) => {
 
             // console.log(data);
-            // if (data.userType == "seeker") {        ///changed this 03/05/17 6:31pm
+            // if (data.userType == "seeker") {        
             //     window.location.href = "/userview";
             //     } else if (data.userType == "finder") {
             //         //if they are a seeker, direct them to documents portal
-            //         window.location.href = "/userview";  //making this the same for simplicity for now 3/7/17 3:20pm
+            //         window.location.href = "/userview";  
             //     }
             // } else { //if user is neither directs them to index page
             //     window.location.href = "/index";}
