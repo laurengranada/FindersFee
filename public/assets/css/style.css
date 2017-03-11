@@ -60,7 +60,6 @@ body {
  /* margin-right: 10px;*/
 }
 
-
 .login {
   position: center;
 }
@@ -73,7 +72,9 @@ body {
   opacity: 100;
 }
 
+
 /*media queries*/
+
 @media (min-width: 768px) {
   #jumbotron {
     min-height: 100%;
@@ -85,7 +86,3 @@ body {
     margin: 20px auto 0;
   }
 
-/*@media (min-width: 768px) {
-  .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
-    font-size: 16px;
-  }*/
