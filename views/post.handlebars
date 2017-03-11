@@ -23,6 +23,7 @@
       <div class="card-block">
         {{#each item_name}}
         {{#unless this.found}}
+        <li style="list-style-type: none; display: none">{{this.id}}</li>
         <h4 class="card-title">{{this.item_name}}</h4>
         <h6 class="card-subtitle mb-2 text-muted">{{this.category}}</h6>
         <p class="card-text">Description:{{this.description}}<br>
