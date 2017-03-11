@@ -1,18 +1,33 @@
+<!DOCTYPE html>
 
+<html lang="en-us">
 
-<h2>Your posts</h2> 
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
 
-<ul>
-  {{#each item_name}}
-    <li style="list-style-type: none; display: none">{{this.id}}</li>
-    <li style="list-style-type: none">Item Name: {{this.item_name}}</li>
-    <li style="list-style-type: none">Category:{{this.category}}</li>
-    <li style="list-style-type: none">Description:{{this.description}}</li>
-    <li style="list-style-type: none">Fee:{{this.fee}}</li>
-    <li style="list-style-type: none">Found:{{this.found}}</li>
-    <li style="list-style-type: none">Email:{{this.finders_email}}</li>
-  {{/each}}
-</ul>
-</div>
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="assets/js/main.js" type="text/javascript"></script>
+  <script src="assets/js/login.js" type="text/javascript"></script>
+</head>
+<body>
+  		<div class="containerform">
+  			<h2>YOUR POSTS: </h2> 
+  			<div class="row">
+    		<div class="col-sm-6">
+			<div class="card">
+			  <div class="card-block">
+			  	{{#each item_name}}
+			    <h4 class="card-title">{{this.item_name}}</h4>
+			    <h6 class="card-subtitle mb-2 text-muted">{{this.category}}</h6>
+			    <p class="card-text">Description: {{this.description}}<br>
+			    Fee: ${{this.fee}}<br>
+			    Email: {{this.finders_email}}</p>
+			    {{/each}}
+			  </div>
+			</div>
+			</div>
+			</div>
+  		</div>
+</body>
 
 
