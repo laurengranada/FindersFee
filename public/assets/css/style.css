@@ -115,7 +115,7 @@ display: block;
 }
 
 
-/*@media (min-width: 768px) {
+@media (min-width: 768px) {
   #jumbotron {
     min-height: 100%;
   }
@@ -124,5 +124,5 @@ display: block;
 @media (min-width: 992px) {
   .container {
     margin: 20px auto 0;
-  }*/
+  }
 
