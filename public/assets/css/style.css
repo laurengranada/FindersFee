@@ -61,12 +61,14 @@ body {
 }
 
 
+
 .login {
   position: center;
 }
 .footer {
   bottom: 0;
   position: relative;
+
 }
 
 .input-group {
@@ -74,6 +76,7 @@ body {
 }
 
 /*media queries*/
+
 @media (min-width: 768px) {
   #jumbotron {
     min-height: 100%;
