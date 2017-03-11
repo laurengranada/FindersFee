@@ -1,6 +1,41 @@
+<!DOCTYPE html>
 
+<html lang="en-us">
 
-<h2>Your posts</h2> 
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="assets/js/main.js" type="text/javascript"></script>
+  <script src="assets/js/login.js" type="text/javascript"></script>
+</head>
+<body>
+      <div class="containerform">
+        <h2>YOUR POSTS: </h2> 
+        <div class="row">
+        <div class="col-sm-6">
+      <div class="card">
+        <div class="card-block">
+          {{#each item_name}}
+          <form action="userpost/{{this.id}}?_method=DELETE" method="POST">
+            <li style="list-style-type: none; display: none">{{this.id}}</li>
+            <h4 class="card-title">{{this.item_name}}</h4>
+            <h6 class="card-subtitle mb-2 text-muted">{{this.category}}</h6>
+            <p class="card-text">Description: {{this.description}}<br>
+            Fee: ${{this.fee}}<br>
+            Found: <input type='checkbox' {{#if found}}checked{{/if}}> </p>
+            Email: {{this.finders_email}}</p>
+            <button type="submit">Delete</button>
+          </form>
+          {{/each}}
+        </div>
+      </div>
+      </div>
+      </div>
+      </div>
+</body>
+
+<!-- <h2>Your posts</h2> 
 
 <ul>
   {{#each item_name}}
@@ -16,6 +51,6 @@
     </form>
   {{/each}}
 </ul>
-</div>
+</div> -->
 
 

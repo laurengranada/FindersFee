@@ -1,5 +1,49 @@
+<!DOCTYPE html>
 
-<div id="finderinstructions" class="row">
+<html lang="en-us">
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="assets/js/main.js" type="text/javascript"></script>
+  <script src="assets/js/login.js" type="text/javascript"></script>
+</head>
+<body>
+  <div class="containerform">
+    <div id="finderinstructions" class="row">
+        <h2>Helping Others Has Its Rewards!</h2> 
+        <p>How?</p>
+        <p> Select an item below and tell us how to locate it. You will be emailed with instructions on how you can get the finder's fee.</p>
+        <h2>ITEMS TO FIND:</h2>
+    </div>
+    <div class="row">
+    <div class="col-sm-6">
+    <div class="card">
+      <div class="card-block">
+        {{#each item_name}}
+        {{#unless this.found}}
+        <li style="list-style-type: none; display: none">{{this.id}}</li>
+        <h4 class="card-title">{{this.item_name}}</h4>
+        <h6 class="card-subtitle mb-2 text-muted">{{this.category}}</h6>
+        <p class="card-text">Description:{{this.description}}<br>
+        Fee: ${{this.fee}}</p>
+        <form action="post/{{this.id}}?_method=PUT" method="POST">
+          <div class="form-group">
+            <li style="list-style-type: none">Found: <input type="checkbox" name="found" value="true"> </li>
+            <input type="text" id="finders_email" name="finders_email">
+            <button type="submit">Submit</button>
+            {{/unless}}
+            {{/each}}
+          </div>
+        </form>
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
+</body>
+<!-- <div id="finderinstructions" class="row">
 <h2>Helping Others Has Its Rewards!</h2> 
 <p>How?</p>
 <p> Select an item below and tell us how to locate it. You will be emailed with instructions on how you can get the finder's fee.</p>
@@ -26,6 +70,6 @@
   {{/each}}
 </ul>
 </div>
-</form>
+</form> -->
 
 
