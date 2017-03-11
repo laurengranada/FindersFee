@@ -109,15 +109,13 @@ for(var i=0; i < req.body.finders_email.length; i++) {
 
     db.Findersfee.update({
       found: true,
-
-      finders_email: req.body.finders_email
+      finders_email: findersemail  
     }, {
       where: {
         id: req.params.id
       }
     }).then(function(dbFindersfee) {
-     // res.redirect("/post");
-     console.log(req.body.finders_email);
+     res.redirect("/post");
   });
 });
 
