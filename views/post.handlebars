@@ -22,7 +22,45 @@
     <div class="col-sm-6">
     <div class="card">
       <div class="card-block">
-        {{#each item_name}}
+      <ul>
+      {{#each item_name}}
+    {{#unless this.found}}
+    <li style="list-style-type: none; display: none">{{this.id}}</li>
+    <li style="list-style-type: none">Item Name: {{this.item_name}}</li>
+    <li style="list-style-type: none">Category:{{this.category}}</li>
+    <li style="list-style-type: none">Description:{{this.description}}</li>
+    <li style="list-style-type: none">Fee:{{this.fee}}</li>
+    <form action="post/{{this.id}}?_method=PUT" method="POST">
+    <div class="form-group">
+    <li style="list-style-type: none">Found: <input type="checkbox" name="found" value="true"> </li>
+    <input type="text" id="finders_email" name="finders_email">
+    <button type="submit">Submit</button>
+    {{/unless}}
+   {{/each}}
+    </ul>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- {{#each item_name}}
+ +  <form action="userpost/{{this.id}}?_method=DELETE" method="POST">
+      <li style="list-style-type: none; display: none">{{this.id}}</li>
+      <li style="list-style-type: none">Item Name: {{this.item_name}}</li>
+      <li style="list-style-type: none">Category:{{this.category}}</li>
+      <li style="list-style-type: none">Description:{{this.description}}</li>
+      <li style="list-style-type: none">Fee:{{this.fee}}</li>
+ -    <li style="list-style-type: none">Found:{{this.found}}</li>
+ +    <li style="list-style-type: none">Found:<input type='checkbox' {{#if found}}checked{{/if}}> </li>
+      <li style="list-style-type: none">Email:{{this.finders_email}}</li>
+ +    <button type="submit">Delete</button>
+ +    </form>
+    {{/each}}
+  </ul>
+  </div> -->
+       <!--  {{#each item_name}}
         {{#unless this.found}}
         <li style="list-style-type: none; display: none">{{this.id}}</li>
         <h4 class="card-title">{{this.item_name}}</h4>
@@ -43,7 +81,7 @@
     </div>
     </div>
   </div>
-  </body>
+  </body> -->
 <!-- <div id="finderinstructions" class="row">
 <h2>Helping Others Has Its Rewards!</h2> 
 <p>How?</p>

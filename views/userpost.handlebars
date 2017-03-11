@@ -16,19 +16,22 @@
         <div class="col-sm-6">
       <div class="card">
         <div class="card-block">
-          {{#each item_name}}
-          <form action="userpost/{{this.id}}?_method=DELETE" method="POST">
-            <li style="list-style-type: none; display: none">{{this.id}}</li>
-            <h4 class="card-title">{{this.item_name}}</h4>
-            <h6 class="card-subtitle mb-2 text-muted">{{this.category}}</h6>
-            <p class="card-text">Description: {{this.description}}<br>
-            Fee: ${{this.fee}}<br>
-            Found: <input type='checkbox' {{#if found}}checked{{/if}}> </p>
-            Email: {{this.finders_email}}</p>
-            <button type="submit">Delete</button>
-          </form>
-          {{/each}}
-        </div>
+          <ul>
+  {{#each item_name}}
+  <form action="userpost/{{this.id}}?_method=DELETE" method="POST">
+    <li style="list-style-type: none; display: none">{{this.id}}</li>
+    <li style="list-style-type: none">Item Name: {{this.item_name}}</li>
+    <li style="list-style-type: none">Category:{{this.category}}</li>
+    <li style="list-style-type: none">Description:{{this.description}}</li>
+    <li style="list-style-type: none">Fee:{{this.fee}}</li>
+    <li style="list-style-type: none">Found:<input type='checkbox' {{#if found}}checked{{/if}}> </li>
+    <li style="list-style-type: none">Email:{{this.finders_email}}</li>
+    <button type="submit">Delete</button>
+    </form>
+  {{/each}}
+</ul>
+</div>
+
       </div>
       </div>
       </div>
