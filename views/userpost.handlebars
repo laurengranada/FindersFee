@@ -13,28 +13,36 @@
       <div class="containerform">
         <h2>YOUR POSTS: </h2> 
         <div class="row">
-        <div class="col-sm-6">
-      <div class="card">
-        <div class="card-block">
-          <ul>
-  {{#each item_name}}
-  <form action="userpost/{{this.id}}?_method=DELETE" method="POST">
-    <li style="list-style-type: none; display: none">{{this.id}}</li>
-    <li style="list-style-type: none">Item Name: {{this.item_name}}</li>
-    <li style="list-style-type: none">Category:{{this.category}}</li>
-    <li style="list-style-type: none">Description:{{this.description}}</li>
-    <li style="list-style-type: none">Fee:{{this.fee}}</li>
-    <li style="list-style-type: none">Found:<input type='checkbox' {{#if found}}checked{{/if}}> </li>
-    <li style="list-style-type: none">Email:{{this.finders_email}}</li>
-    <button type="submit">Delete</button>
-    </form>
-  {{/each}}
-</ul>
-</div>
+      {{#each item_name}}
+      {{#unless this.found}}
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-block">
+          <ul>         
+            <li style="list-style-type: none; display: none">{{this.id}}</li>
+            <li style="list-style-type: none">
+              <h4 class="card-title">{{this.item_name}}</h4></li>
+            <li style="list-style-type: none">
+              <h6 class="card-subtitle mb-2 text-muted">{{this.category}}</h6></li>
+            <li style="list-style-type: none">
+              <p class="card-text">{{this.description}} </p></li>
+            <li style="list-style-type: none">Fee: ${{this.fee}}</li>
+            <form action="post/{{this.id}}?_method=PUT" method="POST">
+              <div class="form-group">
+                <li style="list-style-type: none">Found: <input type="checkbox" name="found" value="true"> </li>
+                <input type="text" id="finders_email" name="finders_email"> 
+                <br>
+                <button type="submit" class="btn btn-info">Delete</button>    
+          </ul>
+              </div>
+            </form>
+          </div>
+        </div>
+        {{/unless}}
+        {{/each}}
+       </div>
+    </div>
 
-      </div>
-      </div>
-      </div>
       </div>
       <script src="assets/js/main.js" type="text/javascript"></script>
   <script src="assets/js/login.js" type="text/javascript"></script>
