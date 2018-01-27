@@ -10,21 +10,15 @@ var db = require("../models");
 var path = require("path"); 
 
 // Routes 
+
+
 // directed to main index page ==================================
   //seeker login
-router.get("/", function(req, res) {
+router.get("/index", function(req, res) {
   // 
     res.render("index");
    
   });
-
-// directed to main index page ==================================
-  //seeker login
-// router.get("/index", function(req, res) {
-//   // 
-//     res.render("index");
-   
-//   });
   //========================================================================
 // Create all our routes and set up logic within those routes where required.
 // This is the route to show all the posts (post.handlebars)
