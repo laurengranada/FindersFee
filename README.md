@@ -17,7 +17,7 @@ Towards the end of the project, I focused on finalizing the front-end and making
 
 ![alt text](https://github.com/laurengranada/FindersFee/blob/master/read-images/final.png)
 
-As you can see above, the first picture lists all of our data in one "<div>" and does not separate per item. Handlebars works well with for loops, but only if your data is stored in a local .json file, which was not the case for us. Our data was live from a database. In moving around the handlebars elements, I was able to organize and differentiate between listings and created individual cards.
+As you can see above, the first picture lists all of our data in one "< div >" and does not separate per item. Handlebars works well with for loops, but only if your data is stored in a local .json file, which was not the case for us. Our data was live from a database. In moving around the handlebars elements, I was able to organize and differentiate between listings and created individual cards.
 
 ### Languages Used
 
